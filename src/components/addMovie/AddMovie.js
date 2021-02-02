@@ -11,9 +11,12 @@ const AddMovie = ({AddNew}) => {
   })
 
   const Handlechange = (e) => {
-    setAddMovies ({ ...AddMovies, [e.target.name]: e.target.value})
-  }
 
+    setAddMovies ({ ...AddMovies,[e.target.name]: e.target.value})
+    
+
+  }
+console.log(AddMovie)
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -26,20 +29,20 @@ const AddMovie = ({AddNew}) => {
 
       <Modal show={show} onHide={handleClose}>
         <span>enter name here</span>
-        <input type="text" placeholder="name" onChange={Handlechange} />
+        <input type="text" placeholder="name" name="name" onChange={Handlechange} />
         <span>the rating here</span>
-        <input type="text" placeholder="rating" onChange={Handlechange} />
+        <input type="text" placeholder="rating" name="rating" onChange={Handlechange} />
         <span>image here</span>
-        <input type="text" placeholder="image" onChange={Handlechange} />
+        <input type="text" placeholder="image"  name="image" onChange={Handlechange} />
         <span>enter description here</span>
-        <input type="text" placeholder="description" onChange={Handlechange} />
+        <input type="text" placeholder="description" name="description" onChange={Handlechange} />
         <span>enter the date here</span>
-        <input type="text" placeholder="date" onChange={Handlechange} />
+        <input type="text" placeholder="date" name="date" onChange={Handlechange} />
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button >
-          <Button onClick={()=>{AddNew(AddMovies)}} variant="primary">
+          <Button onClick={()=>AddNew(AddMovies)} variant="primary">
             Add Movie
           </Button >
         </Modal.Footer>

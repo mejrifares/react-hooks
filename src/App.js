@@ -12,8 +12,10 @@ function App() {
   const [myInput, setMyInput] = useState ("")
   const [myRate, setMyRate] = useState(0)
 
-  const AddNew = (f) => {
-    setMovies ([...movies, f])
+ 
+
+  const AddNew = (newObj) => {
+    setMovies ([...movies , newObj ])
   }
 
   console.log (Data)
